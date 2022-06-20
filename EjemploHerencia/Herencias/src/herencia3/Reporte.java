@@ -45,4 +45,14 @@ public class Reporte {
         return ciclo;
     }
 
+public String toString() {
+    return nombre;
+    }
+
+
+
+
+
+
+
 }
