@@ -1,21 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package paquete06;
+package paquete05;
 
 public class EstudiantePresencial extends Estudiante{
     /*1.  Declarar
-        numeroCreditos: Entero 
-        costoCredito: Real 
+        numeroCreditos: Entero
+        costoCredito: Real
         */
     int numeroCreditos;
     double costoCredito;
-
-    public EstudiantePresencial(String nombre, String apellido) {
-        super(nombre, apellido);
-    }
 
     //  Métodos establecer y calcular para los datos o atributos de la clase
     // 2.  Método establecerNumeroCreditos(numero: Real)
@@ -28,7 +19,7 @@ public class EstudiantePresencial extends Estudiante{
         costoCredito = valor;
     }
 
-    // 4.  
+    // 4.
     // Se implementa el método abstracto declarado en la superclase,
     // bajo las condiciones propias de la subclase
     @Override
@@ -47,4 +38,15 @@ public class EstudiantePresencial extends Estudiante{
         return costoCredito;
     }
 
+    @Override
+    public String toString() {
+        String c = String.format("%s\n"
+                        + "Numero de asignaturas: %d\n"
+                        + "Costo asignatura: %.2f\n"
+                ,super.toString()
+                ,obtenerNumeroCreditos()
+                ,obtenerCostoCredito()
+        );
+        return c;
+    }
 }

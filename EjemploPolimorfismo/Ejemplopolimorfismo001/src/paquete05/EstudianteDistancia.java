@@ -1,22 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package paquete06;
+package paquete05;
 
 public class EstudianteDistancia extends Estudiante {
     /*1.  Declarar
-        numeroAsignaturas: Entero 
-        costoAsginatura: Real 
+        numeroAsignaturas: Entero
+        costoAsginatura: Real
     */
 
     int numeroAsignaturas;
     double costoAsignatura;
-
-    public EstudianteDistancia(String nombre, String apellido) {
-        super(nombre, apellido);
-    }
 
     //  Métodos establecer y calcular para los datos o atributos de la clase
 
@@ -47,4 +38,17 @@ public class EstudianteDistancia extends Estudiante {
         return costoAsignatura;
     }
 
+    @Override
+    public String toString() {
+        String c = String.format("%s\n"
+                        + "Numero de asignaturas: %d\n"
+                        + "Costo asignatura: %.2f\n"
+                ,super.toString()
+                ,obtenerNumeroAsignaturas()
+                ,obtenerCostoAsignatura()
+        );
+        return c;
+    }
+
 }
+    // 6. Método

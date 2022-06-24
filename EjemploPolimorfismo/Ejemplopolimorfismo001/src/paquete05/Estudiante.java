@@ -1,32 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package paquete06;
+package paquete05;
 
 public abstract class Estudiante {
     /*
-        1.  Declarar
-        // se declaran datos o atributos con visibilidad protegido,
-        // para que se puedan manipular por las clases derivadas
-        # nombresEstudiante: Cadena
-        # apellidosEstudiante: Cadena
-        # identificacionEstudiante: Cadena
-        # edadEstudiante: Entero
-        # matricula: Real
-        
-    */
+      1.  Declarar
+      // se declaran datos o atributos con visibilidad protegido,
+      // para que se puedan manipular por las clases derivadas
+      # nombresEstudiante: Cadena
+      # apellidosEstudiante: Cadena
+      # identificacionEstudiante: Cadena
+      # edadEstudiante: Entero
+      # matricula: Real
+
+  */
     protected String nombresEstudiante;
     protected String apellidosEstudiante;
     protected String identificacionEstudiante;
     protected int edadEstudiante;
     protected double matricula;
 
-    public Estudiante(String nombre, String apellido){
-        nombresEstudiante = nombre;
-        apellidosEstudiante = apellido;
-    }
     // Método establecerNombresEstudiante(nom: Cadena)
     public void establecerNombresEstudiante(String nom){
         nombresEstudiante = nom;
@@ -83,4 +74,28 @@ public abstract class Estudiante {
     public double obtenerMatricula(){
         return matricula;
     }
+
+    /*
+     String nombresEstudiante;
+     String apellidosEstudiante;
+    String identificacionEstudiante;
+     int edadEstudiante;
+     double matricula;
+    */
+    @Override
+    public String toString() {
+        String c = String.format("Nombre del estudiante: %s\n"
+                        + "Apellido del estudiante: %s\n"
+                        + "Identificacion del estudiante: %s\n"
+                        + "Edad del estudiante: %d\n"
+                        + "Matricula: %.2f\n"
+                ,obtenerNombresEstudiante()
+                ,obtenerApellidoEstudiante()
+                ,obtenerIdentificacionEstudiante()
+                ,obtenerEdadEstudiante()
+                ,obtenerMatricula()
+        );
+        return c;
+    }
 }
+
